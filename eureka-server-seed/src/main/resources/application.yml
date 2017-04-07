@@ -1,0 +1,25 @@
+server:
+  port: 8002
+
+security:
+  basic:
+    enabled: true
+  user:
+      name: admin
+      password: admin
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    instance:
+      hostname: localhost
+      preferIpAddress: true
+    serviceUrl:
+      defaultZone: http://admin:admin@127.0.0.1:8002/eureka/
+
+zuul:
+  prefix: /api
+  customer-by-service:
+    path: /service-spring/**
+    serviceId: spring-service-heartbeat-sample

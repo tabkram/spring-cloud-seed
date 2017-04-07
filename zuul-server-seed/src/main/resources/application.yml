@@ -1,0 +1,17 @@
+server:
+  port: 8003
+
+spring:
+  application:
+      name: zuul-api-gateway
+
+eureka:
+    client:
+       instance:
+          hostname: localhost
+          preferIpAddress: true
+       serviceUrl:
+          defaultZone:  http://admin:admin@127.0.0.1:8002/eureka/
+
+zuul:
+  prefix: /api

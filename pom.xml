@@ -6,7 +6,11 @@
 	<groupId>com.talan.labs.seed.msa.server</groupId>
 	<artifactId>server-seed</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<modules>
+		<module>eureka-server-seed</module>
+		<module>zuul-server-seed</module>
+	</modules>
+	<packaging>pom</packaging>
 
 	<name>server-seed</name>
 	<description>A seed application for Microservices</description>
@@ -26,22 +30,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-eureka-server</artifactId>
-		</dependency>
-
-		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>

@@ -32,3 +32,6 @@ https://nofluffjuststuff.com/magazine/2016/06/cloud_native_spring_configuring_mi
 
 http://stackoverflow.com/questions/39380936/load-balancing-ribbon-and-routing-zuul-spring-rest-api-spring-data-jpa-req
 
+https://gist.github.com/denji/8333630
+
+http://localhost:8003/api/spring-service-heartbeat-sample/greeting/ffff?failureProbability=1

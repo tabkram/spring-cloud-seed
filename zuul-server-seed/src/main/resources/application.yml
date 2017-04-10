@@ -15,3 +15,12 @@ eureka:
 
 zuul:
   prefix: /api
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 10000

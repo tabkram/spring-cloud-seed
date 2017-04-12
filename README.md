@@ -50,7 +50,7 @@ NB: see *dockerfile <-> docker-compose* compatibility here: https://docs.docker.
 
 - Old school:
 
-> sudo docker container run -d -p 8002:8002 --name=eureka-server-seed eureka-server-seed:latest
+> sudo docker container run -d -p 8002:8002 --name=eureka-server eureka-server:latest
 
 - via compose
 

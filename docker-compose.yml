@@ -1,7 +1,22 @@
 version: "3"
 
 services:
-  eureka-server-seed:
-    image: eureka-server-seed:latest
+  eureka-server:
+    image: eureka-server:latest
     ports:
       - "8002:8002"
+
+  zuul-api-gateway:
+    image: zuul-api-gateway:latest
+    ports:
+      - "8003:8003"
+
+  hystrix-dashboard:
+    image: hystrix-dashboard:latest
+    ports:
+      - "8001:8001"
+
+  acme-service:
+    image: acme-service:latest
+    ports:
+      - "8010:8010"

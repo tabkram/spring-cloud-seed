@@ -1,7 +1,7 @@
 # Microservices Seed Project (Server)
 
 
-http://localhost:8003/api/spring-service-heartbeat-sample
+http://localhost:8003/api/spring-heartbeat-service
 
 ## Eureka Server
 It's about using an Eureka server to maintain a registry of microservices. All with the help of the spring cloud project.
@@ -19,7 +19,7 @@ Android example: (https://github.com/thomasletsch/moserp/blob/master/gui/invento
  
  It's about an API gateway that represents a single entry point to our microservices. Zuul by itself represents a service registred in API client and it gets all registred services to know to which instance it should redirected the call
 
-if you want to test how it works : http://localhost:8003/api/spring-service-heartbeat-sample
+if you want to test how it works : http://localhost:8003/api/spring-heartbeat-service
 
 ---
 ### references
@@ -34,4 +34,9 @@ http://stackoverflow.com/questions/39380936/load-balancing-ribbon-and-routing-zu
 
 https://gist.github.com/denji/8333630
 
-http://localhost:8003/api/spring-service-heartbeat-sample/greeting/ffff?failureProbability=1
+http://localhost:8003/api/spring-heartbeat-service/greeting/ffff?failureProbability=1
+
+
+http://callistaenterprise.se/blogg/teknik/2015/04/15/building-microservices-with-spring-cloud-and-netflix-oss-part-2/
+
+

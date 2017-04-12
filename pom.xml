@@ -9,6 +9,7 @@
 	<modules>
 		<module>eureka-server-seed</module>
 		<module>zuul-server-seed</module>
+		<module>hystrix-dashboard-seed</module>
 	</modules>
 	<packaging>pom</packaging>
 

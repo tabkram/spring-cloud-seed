@@ -22,4 +22,4 @@ zuul:
   prefix: /api
   customer-by-service:
     path: /service-spring/**
-    serviceId: spring-service-heartbeat-sample
+    serviceId: spring-heartbeat-service

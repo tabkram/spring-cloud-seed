@@ -21,6 +21,17 @@ Android example: (https://github.com/thomasletsch/moserp/blob/master/gui/invento
 
 if you want to test how it works : http://localhost:8003/api/spring-heartbeat-service
 
+### Docker (on Linux)
+
+ To build the images use the following maven command : `sudo mvn package docker:build` on each module
+ 
+### Old school
+
+example :
+> sudo docker container run -d -p 8002:8002 --name=eureka-server-seed eureka-server-seed:latest
+
+### via compose
+
 ---
 ### references
 
@@ -38,5 +49,17 @@ http://localhost:8003/api/spring-heartbeat-service/greeting/ffff?failureProbabil
 
 
 http://callistaenterprise.se/blogg/teknik/2015/04/15/building-microservices-with-spring-cloud-and-netflix-oss-part-2/
+
+--
+#
+Docker 
+
+examples: https://github.com/fabric8io/shootout-docker-maven
+
+
+---
+Samples of microservices
+
+https://github.com/ewolff/microservice
 
 

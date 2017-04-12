@@ -5,18 +5,22 @@ services:
     image: eureka-server:latest
     ports:
       - "8002:8002"
+    network_mode: "host"
 
   zuul-api-gateway:
     image: zuul-api-gateway:latest
     ports:
       - "8003:8003"
+    network_mode: "host"
 
   hystrix-dashboard:
     image: hystrix-dashboard:latest
     ports:
       - "8001:8001"
+    network_mode: "host"
 
   acme-service:
     image: acme-service:latest
     ports:
       - "8010:8010"
+    network_mode: "host"

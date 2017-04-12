@@ -10,6 +10,7 @@
 		<module>eureka-server-seed</module>
 		<module>zuul-server-seed</module>
 		<module>hystrix-dashboard-seed</module>
+		<module>acme-service</module>
 	</modules>
 	<packaging>pom</packaging>
 

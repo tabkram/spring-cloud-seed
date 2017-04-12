@@ -21,18 +21,43 @@ Android example: (https://github.com/thomasletsch/moserp/blob/master/gui/invento
 
 if you want to test how it works : http://localhost:8003/api/spring-heartbeat-service
 
-### Docker (on Linux)
+## Docker (on Linux)
 
- To build the images use the following maven command : `sudo mvn package docker:build` on each module
- 
-### Old school
+### Build
 
-example :
+- To build the images use the following maven command : `sudo mvn package docker:build` on each module
+
+### Install
+- Here are the required versions of Docker and Docker-compose :
+
+Tool  | Version
+------------- | -------------
+Docker  |  17.03.1-ce
+Docker-compose |1.12.0
+Compose file format |version 3
+
+- To install on Linux :
+
+```
+curl -L https://github.com/docker/compose/releases/download/1.12.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+```
+
+- for more information:
+NB: see *dockerfile <-> docker-compose* compatibility here: https://docs.docker.com/compose/compose-file/compose-versioning/
+
+### RUN
+
+- Old school:
+
 > sudo docker container run -d -p 8002:8002 --name=eureka-server-seed eureka-server-seed:latest
 
-### via compose
+- via compose
 
----
+> sudo docker-compose up -d
+
+
+-------------------------------------
 ### references
 
 http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html

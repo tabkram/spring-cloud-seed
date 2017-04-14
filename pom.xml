@@ -4,17 +4,17 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.talan.labs.seed.msa.server</groupId>
-	<artifactId>server-seed</artifactId>
+	<artifactId>microservices-seed</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<modules>
-		<module>eureka-server-seed</module>
-		<module>zuul-server-seed</module>
-		<module>hystrix-dashboard-seed</module>
+		<module>eureka-server</module>
+		<module>zuul-api-gateway</module>
+		<module>hystrix-dashboard</module>
 		<module>acme-service</module>
 	</modules>
 	<packaging>pom</packaging>
 
-	<name>server-seed</name>
+	<name>microservices-seed</name>
 	<description>A seed application for Microservices</description>
 
 	<parent>
@@ -55,29 +55,49 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			<plugin>
-				<groupId>com.spotify</groupId>
-				<artifactId>docker-maven-plugin</artifactId>
-				<version>0.4.13</version>
-				<configuration>
-					<imageName>${project.artifactId}</imageName>
-					<dockerDirectory>src/main/docker</dockerDirectory>
-					<resources>
-						<resource>
-							<targetPath>/</targetPath>
-							<directory>${project.build.directory}</directory>
-							<include>${project.build.finalName}.jar</include>
-						</resource>
-					</resources>
-					<imageTags>
-						<imageTag>${project.version}</imageTag>
-						<imageTag>latest</imageTag>
-					</imageTags>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
 
+	<profiles>
+	<profile>
+	<id>docker</id>
+		<build>
+			<pluginManagement>
+				<plugins>
+					<plugin>
+						<groupId>com.spotify</groupId>
+						<artifactId>docker-maven-plugin</artifactId>
+						<version>0.4.13</version>
+						<configuration>
+							<imageName>${project.artifactId}</imageName>
+							<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
+							<resources>
+								<resource>
+									<targetPath>/</targetPath>
+									<directory>${project.build.directory}</directory>
+									<include>${project.build.finalName}.jar</include>
+								</resource>
+							</resources>
+							<imageTags>
+								<imageTag>${project.version}</imageTag>
+								<imageTag>latest</imageTag>
+							</imageTags>
+						</configuration>
+						<executions>
+							<execution>
+                                <id>build-image</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>build</goal>
+                                </goals>
+                            </execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</pluginManagement>
+		</build>
+	</profile>
+	</profiles>
 	<repositories>
 		<repository>
 			<id>spring-milestones</id>

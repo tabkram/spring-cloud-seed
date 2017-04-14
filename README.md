@@ -25,7 +25,7 @@ if you want to test how it works : http://localhost:8003/api/spring-heartbeat-se
 
 ### Build
 
-- To build the images use the following maven command : `sudo mvn package docker:build` on each module
+- To build the images use the following maven command : `sudo mvn package docker:build` on each module. *(see more information about docker build process in the wiki)*
 
 ### Install
 - Here are the required versions of Docker and Docker-compose :

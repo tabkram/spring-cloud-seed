@@ -10,6 +10,7 @@
 		<module>eureka-server</module>
 		<module>zuul-api-gateway</module>
 		<module>hystrix-dashboard</module>
+		<module>zipkin-server</module>
 		<module>acme-service</module>
 	</modules>
 	<packaging>pom</packaging>

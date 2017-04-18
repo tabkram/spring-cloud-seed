@@ -19,6 +19,12 @@ services:
       - "8001:8001"
     network_mode: "host"
 
+  zipkin-server:
+    image: zipkin-server:latest
+    ports:
+      - "9411:9411"
+    network_mode: "host"
+
   acme-service:
     image: acme-service:latest
     ports:

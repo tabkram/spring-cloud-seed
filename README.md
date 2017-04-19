@@ -1,54 +1,89 @@
-# Microservices Seed Project (Server)
+# Spring cloud Seed (Server)
 
+## Description 
 
-http://localhost:8003/api/spring-heartbeat-service
+This reference application is a Spring Cloud example of implementing a [Strangler Pattern](https://www.martinfowler.com/bliki/StranglerApplication.html) using microservices. 
 
-## Eureka Server
+## Architecture Diagram
+
+![](architecture_diagram.PNG)
+
+## Project structure
+
+**1- Eureka Server (for service discovery register)** 
+
 It's about using an Eureka server to maintain a registry of microservices. All with the help of the spring cloud project.
 UI is available here : http://127.0.0.1:8002
 
-# API 
-Eureka Server exposes a REST API specially for communicating with non-java registry clients. Documentation is available here: [Eureka-REST-operations](https://github.com/Netflix/eureka/wiki/Eureka-REST-operations)
-If you don't believe : http://127.0.0.1:8002/eureka/apps
+- NB: Eureka Server exposes a REST API specially for communicating with non-java registry clients. Documentation is available here: [Eureka-REST-operations](https://github.com/Netflix/eureka/wiki/Eureka-REST-operations)
+(If you can't believe me : http://127.0.0.1:8002/eureka/apps)
 
-examples
-Android example: (https://github.com/thomasletsch/moserp/blob/master/gui/inventory-app/app/src/main/java/org/moserp/common/rest/RestServiceRegistry.java)
+- Examples: Android example: (https://github.com/thomasletsch/moserp/blob/master/gui/inventory-app/app/src/main/java/org/moserp/common/rest/RestServiceRegistry.java)
 
-
-## Zuul
+**2- Zuul (API Gateway)**
  
  It's about an API gateway that represents a single entry point to our microservices. Zuul by itself represents a service registred in API client and it gets all registred services to know to which instance it should redirected the call
 
-if you want to test how it works : http://localhost:8003/api/spring-heartbeat-service
+- Examples: if you want to test how it works : http://localhost:8003/api/acme-service
 
-## Docker (on Linux)
+**3- Hystrix-Dashboard (for monitoring)**
 
-### Build
+**4- Turbine aggregator**
+
+**5- Zipkin Server**
+
+**6- Swagger-ui**
+
+**7- Acme service**
+
+## Getting started 
+
+**1- Clone the project:**
+
+If you just want to start a new project without the `spring-cloud-seed` commit history then you can do:
+
+         git clone --depth 1 https://gitlab.talanlabs.com/microservices-seeds/spring-cloud-seed.git
+        
+**2- Run apps:**
+
+- With Spring boot maven plugin:  use the following command `mvn spring-boot:run` on each module.
+
+- If you are using intelliJ, You could create a `Compound` run type and add all your applications in it. [more info](http://stackoverflow.com/questions/36055601/is-there-a-way-to-run-multiple-spring-boot-applications-with-a-single-running-co)
+
+- With Docker : [see below](https://gitlab.talanlabs.com/microservices-seeds/spring-cloud-seed#Deploy)
+
+## Deploy
+
+with Docker (on Linux)
+
+**1- Build**
 
 - To build the images use the following maven command :  ~~`sudo mvn package docker:build` on each module~~ `maven package -Pdocker`. 
 
 *(see more information about docker build process in the wiki)*
 
-### Install
-- Here are the required versions of Docker and Docker-compose :
+**2- Install**
 
-Tool  | Version
-------------- | -------------
-Docker  |  17.03.1-ce
-Docker-compose |1.12.0
-Compose file format |version 3
+- Requirements: Here are the required versions of Docker and Docker-compose :
 
-- To install on Linux :
+    Tool  | Version
+    ------------- | -------------
+    Docker  |  17.03.1-ce
+    Docker-compose | 1.12.0
+    Compose file format | version 3
+
+- Install on Linux :
 
 ```
 curl -L https://github.com/docker/compose/releases/download/1.12.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
 ```
 
-- for more information:
+- More information:
+
 NB: see *dockerfile <-> docker-compose* compatibility here: https://docs.docker.com/compose/compose-file/compose-versioning/
 
-### RUN
+**3- RUN**
 
 - Old school:
 
@@ -58,9 +93,23 @@ NB: see *dockerfile <-> docker-compose* compatibility here: https://docs.docker.
 
 > sudo docker-compose up -d
 
+## Other springCloud/NetflixOSS examples
 
--------------------------------------
-### references
+Like `spring-cloud-seed` there are other existing microservice POCs & examples on the net. In fact, our project is inspired by  what exists.
+
+*NB : It's just an inspiration, not a copy ! We have our own reasons that lead to choose to create our own stack.*
+
+- Existing projects (examples):
+
+https://github.com/Oreste-Luci/netflix-oss-example
+
+https://github.com/ewolff/microservice
+
+https://github.com/sqshq/PiggyMetrics
+
+https://github.com/singram/spring-cloud-microservices
+
+## references
 
 http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html
 
@@ -72,21 +121,11 @@ http://stackoverflow.com/questions/39380936/load-balancing-ribbon-and-routing-zu
 
 https://gist.github.com/denji/8333630
 
-http://localhost:8003/api/spring-heartbeat-service/greeting/ffff?failureProbability=1
-
-
 http://callistaenterprise.se/blogg/teknik/2015/04/15/building-microservices-with-spring-cloud-and-netflix-oss-part-2/
 
---
-#
-Docker 
+- Docker 
 
 examples: https://github.com/fabric8io/shootout-docker-maven
 
-
----
-Samples of microservices
-
-https://github.com/ewolff/microservice
 
 

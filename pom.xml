@@ -12,6 +12,7 @@
 		<module>hystrix-dashboard</module>
 		<module>zipkin-server</module>
 		<module>acme-service</module>
+		<module>swagger-ui</module>
 	</modules>
 	<packaging>pom</packaging>
 

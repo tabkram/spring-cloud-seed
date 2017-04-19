@@ -18,3 +18,47 @@ You can see :
 
 > INFO [acme-service,15d08f544834bcfc,15d08f544834bcfc,false] 7996 --- [nio-8010-exec-1] c.t.l.s.m.s.a.rest.GreetingController    : you called for safe greeting
 
+## Api documentation (Swagger2)
+
+The REST APi documentation in this example is based on [swagger v2](http://swagger.io/) which is based on **OpenAPI Specification** and generated a *swagger.json* endpoint here:  
+
+> http://localhost:8010/v2/api-docs
+
+You can change the spec path in application.yml :
+```
+springfox: 
+  documentation: 
+    swagger: 
+      v2: 
+        path: /api/docs
+```
+
+### Configuration
+ 
+ The configuration in **SwaggerConfig.java** mainly centers around the Docket bean. It makes, through using `any()`, documentation for your entire API available through Swagger. *
+ *(NB: this is only for demo and should be changed)**
+ 
+ Minimal config:
+ 
+ 
+     @Configuration
+     @EnableSwagger2
+     public class SwaggerConfig {
+         @Bean
+         public Docket api() {
+             return new Docket(DocumentationType.SWAGGER_2)
+                     .select()
+                     .apis(RequestHandlerSelectors.any())
+                     .paths(PathSelectors.any())
+                     .build();
+         }
+     }
+      
+ NB: you need to enable CORS to be able to parse and call spec from another swagger-ui server, but only for dev environment (see *CORSFilter.java*)
+ 
+ ### References
+ 
+ http://swagger-spring-boot.blogspot.fr/
+ 
+ http://www.baeldung.com/swagger-2-documentation-for-spring-rest-api
+ 

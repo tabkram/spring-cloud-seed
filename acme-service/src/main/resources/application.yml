@@ -6,7 +6,7 @@ spring:
       name: acme-service
   sleuth:
     sampler:
-      percentage: 0.2
+      percentage: 1
 
 #logging:
 #  level:
@@ -31,3 +31,20 @@ hystrix:
           thread:
             timeoutInMilliseconds: 10000
 
+swagger:
+  title: ACME Service REST API
+  description: At this level, you're at the point at which something is at its best or most highly developed
+  version: @project.version@
+  termsOfServiceUrl: https://www.apache.org/licenses/LICENSE-2.0
+  license: Apache License 2.0
+  licenseUrl: https://www.apache.org/licenses/LICENSE-2.0
+  contact:
+    name: Akram Tabka
+    url: https://talanlabs.com
+    email: akram.tabka@talan.
+
+#springfox:
+#  documentation:
+#    swagger:
+#      v2:
+#        path: /api/docs

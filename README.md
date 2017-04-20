@@ -26,7 +26,7 @@ UI is available here : http://127.0.0.1:8002
 
 - Examples: if you want to test how it works : http://localhost:8003/api/acme-service
 
-**3- Hystrix-Dashboard (for monitoring)**
+**3- Hystrix-Dashboard + Turbine**
 
 **4- Turbine aggregator**
 

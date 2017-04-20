@@ -21,3 +21,10 @@ hystrix:
           strategy: THREAD
           thread:
             timeoutInMilliseconds: 10000
+
+
+turbine:
+  clusterNameExpression: new String('default')
+#  aggregator:
+#    clusterConfig: ACME-SERVICE
+  appConfig: acme-service

@@ -28,13 +28,13 @@ UI is available here : http://127.0.0.1:8002
 
 **3- Hystrix-Dashboard + Turbine**
 
-**4- Turbine aggregator**
+- This application is playing the role of both showing the Hystrix Dashboard and exposing turbine stream. [see more..](https://gitlab.talanlabs.com/microservices-seeds/spring-cloud-seed/blob/master/hystrix-dashboard/README.md)
 
-**5- Zipkin Server**
+**4- Zipkin Server**
 
-**6- Swagger-ui**
+**5- Swagger-ui**
 
-**7- Acme service**
+**6- Acme service**
 
 ## Getting started 
 

@@ -12,15 +12,16 @@ spring:
 #  level:
 #    org.springframework.web.servlet.DispatcherServlet: DEBUG
 
-eureka:
-  client:
-    instance:
-      statusPageUrlPath: /info
-      healthCheckUrlPath: /health
-      hostname: localhost
-      preferIpAddress: true
-    serviceUrl:
-      defaultZone:  http://admin:admin@127.0.0.1:8002/eureka/
+#EUREKA CONFIG is HANDLED NOW by the config-server
+#eureka:
+#  client:
+#    instance:
+#      statusPageUrlPath: /info
+#      healthCheckUrlPath: /health
+#      hostname: localhost
+#      preferIpAddress: true
+#    serviceUrl:
+#      defaultZone:  http://admin:admin@127.0.0.1:8002/eureka/
 
 hystrix:
   command:
@@ -41,7 +42,7 @@ swagger:
   contact:
     name: Akram Tabka
     url: https://talanlabs.com
-    email: akram.tabka@talan.
+    email: akram.tabka@talan
 
 #springfox:
 #  documentation:

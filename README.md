@@ -36,6 +36,11 @@ UI is available here : http://127.0.0.1:8002
 
 **6- Acme service**
 
+**7- Config-server**
+
+- This provides server support for externalized configuration in a distributed system through `Spring Cloud Config`. This Client-side is in the `acme-service`. the exernalized config is in the `/config` folder.
+But it could be totally in the external repo.
+
 ## Getting started 
 
 **1- Clone the project:**
@@ -108,6 +113,10 @@ https://github.com/ewolff/microservice
 https://github.com/sqshq/PiggyMetrics
 
 https://github.com/singram/spring-cloud-microservices
+
+https://github.com/kbastani/cloud-native-microservice-strangler-example/tree/master/microservices
+
+https://github.com/kbastani/spring-cloud-microservice-example
 
 ## references
 

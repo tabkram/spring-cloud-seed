@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.sleuth.Span;
 import org.springframework.cloud.sleuth.SpanAccessor;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.Optional;
 
+@RefreshScope
 @RestController
 public class GreetingControllerImpl implements GreetingController {
     private static final Log log = LogFactory.getLog(GreetingController.class);
@@ -27,6 +29,9 @@ public class GreetingControllerImpl implements GreetingController {
     private DiscoveryClient discoveryClient;
     @Autowired
     private GreetingService greetingService;
+
+    @Value("${message:Hello default}")
+    private String message;
 
     @Value("${spring.application.name}")
     private String applicationName;
@@ -50,6 +55,12 @@ public class GreetingControllerImpl implements GreetingController {
         log.info("you called for safe greeting");
         debug();
         return this.greetingService.safeSayHello(username, failureProbability);
+    }
+
+    @Override
+    public String configGreeting(){
+        log.info("you called for config greeting");
+        return this.message;
     }
 
     public void debug(){

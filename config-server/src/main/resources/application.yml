@@ -1,0 +1,19 @@
+server:
+  port: 8888
+
+management:
+  security:
+    enabled: false
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitlab.talanlabs.com/microservices-seeds/spring-cloud-seed.git
+          username: ${gitlab.username}
+          password: ${gitlab.password}
+          searchPaths: config
+          force-pull: true

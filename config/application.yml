@@ -1,1 +1,11 @@
 message: Hello World from config!
+
+eureka:
+  client:
+    instance:
+      statusPageUrlPath: /info
+      healthCheckUrlPath: /health
+      hostname: localhost
+      preferIpAddress: true
+    serviceUrl:
+      defaultZone:  http://admin:admin@127.0.0.1:8002/eureka/

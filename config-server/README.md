@@ -8,12 +8,24 @@ Add gitlab username and password in your command line properties if you want to 
 You'ill see some kind of  `StartupService constructed, Hello: USERNAME` in the logs.
 
 *NB: it's absoluty not recommanded to use your own gitrepo credentials when running application on production (this is only an example)*
+
+## Diagram
+ 
+ ![](spring-cloud-config.png)
  
 ## Usage
  
-Efter running application, you exposes your config as REST endpoints:
+After running application, you exposes your config as REST endpoints:
  
-Example : http://localhost:8888/acme-service/development
+Example : `curl http://localhost:8888/acme-service/development`
+ 
+ The HTTP service has resources in the form:
+ 
+     /{application}/{profile}[/{label}]
+     /{application}-{profile}.yml
+     /{label}/{application}-{profile}.yml
+     /{application}-{profile}.properties
+     /{label}/{application}-{profile}.properties
  
 ## Client side
 

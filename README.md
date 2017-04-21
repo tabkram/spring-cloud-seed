@@ -26,17 +26,17 @@ UI is available here : http://127.0.0.1:8002
 
 - Examples: if you want to test how it works : http://localhost:8003/api/acme-service
 
-**3- Hystrix-Dashboard + Turbine**
+**3- [Hystrix-Dashboard + Turbine](hystrix-dashboard/README.md)**
 
-- This application is playing the role of both showing the Hystrix Dashboard and exposing turbine stream. [see more..](https://gitlab.talanlabs.com/microservices-seeds/spring-cloud-seed/blob/master/hystrix-dashboard/README.md)
+- This application is playing the role of both showing the Hystrix Dashboard and exposing turbine stream. [see more..](hystrix-dashboard/README.md)
 
-**4- Zipkin Server**
+**4- [Zipkin-Server](zipkin-server/README.md)**
 
 **5- Swagger-ui**
 
-**6- Acme service**
+**6- [Acme-service](acme-service/README.md)**
 
-**7- Config-server**
+**7- [Config-server](config-server/README.md)**
 
 - This provides server support for externalized configuration in a distributed system through `Spring Cloud Config`. This Client-side is in the `acme-service`. the exernalized config is in the `/config` folder.
 But it could be totally in the external repo.

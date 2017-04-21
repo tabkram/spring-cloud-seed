@@ -39,7 +39,7 @@ UI is available here : http://127.0.0.1:8002
 **7- [Config-server](config-server/README.md)**
 
 - This provides server support for externalized configuration in a distributed system through `Spring Cloud Config`. This Client-side is in the `acme-service`. the exernalized config is in the `/config` folder.
-But it could be totally in the external repo.
+But it could be totally in the external repo. Configuration keys and values can be read from a Git repository online or on a disk
 
 ## Getting started 
 

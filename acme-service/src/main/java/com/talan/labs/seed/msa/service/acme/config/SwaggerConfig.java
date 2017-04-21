@@ -1,5 +1,7 @@
 package com.talan.labs.seed.msa.service.acme.config;
 
+import com.google.common.base.Predicate;
+import com.google.common.base.Predicates;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -57,10 +59,16 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.any())
-                .paths(PathSelectors.any())
+                .paths(PathSelectors.regex("/v.*"))
                 .build()
                 .apiInfo(apiInfo());
     }
+
+/*
+    private Predicate<String> paths() {
+        return Predicates.not(PathSelectors.regex("/basic-error-controller.*"));
+    }
+*/
 
     /**
      * This method will return the API info object to swagger which will in turn display the information on the swagger UI.

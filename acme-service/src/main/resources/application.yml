@@ -44,8 +44,8 @@ swagger:
     url: https://talanlabs.com
     email: akram.tabka@talan
 
-#springfox:
-#  documentation:
-#    swagger:
-#      v2:
-#        path: /api/docs
+springfox:
+  documentation:
+    swagger:
+      v2:
+        path: /api-docs

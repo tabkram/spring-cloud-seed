@@ -60,7 +60,7 @@ You can see in the logs:
 
 The REST APi documentation in this example is based on [swagger v2](http://swagger.io/) which is based on **OpenAPI Specification** and generated a *swagger.json* endpoint here:  
 
-> http://localhost:8010/v2/api-docs
+> http://localhost:8010/api-docs
 
 You can change the spec path in application.yml :
 
@@ -94,6 +94,10 @@ springfox:
      }
       
  NB: you need to enable CORS to be able to parse and call spec from another swagger-ui server, but only for dev environment (see *CORSFilter.java*)
+ 
+ - Tuning
+ 
+ https://jakubstas.com/spring-jersey-swagger-fine-tuning-exposed-documentation/#.WPoZ19LyhPY
  
 ## References
  

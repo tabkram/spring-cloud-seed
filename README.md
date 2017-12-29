@@ -47,7 +47,7 @@ But it could be totally in the external repo. Configuration keys and values can 
 
 If you just want to start a new project without the `spring-cloud-seed` commit history then you can do:
 
-         git clone --depth 1 https://gitlab.talanlabs.com/microservices-seeds/spring-cloud-seed.git
+         git clone --depth 1 https://github.com/tabkram/spring-cloud-seed.git
         
 **2- Run apps:**
 
@@ -55,7 +55,7 @@ If you just want to start a new project without the `spring-cloud-seed` commit h
 
 - If you are using intelliJ, You could create a `Compound` run type and add all your applications in it. [more info](http://stackoverflow.com/questions/36055601/is-there-a-way-to-run-multiple-spring-boot-applications-with-a-single-running-co)
 
-- With Docker : [see below](https://gitlab.talanlabs.com/microservices-seeds/spring-cloud-seed#Deploy)
+- With Docker : [see below](#Deploy)
 
 ## Deploy
 

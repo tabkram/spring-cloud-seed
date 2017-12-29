@@ -41,8 +41,8 @@ swagger:
   licenseUrl: https://www.apache.org/licenses/LICENSE-2.0
   contact:
     name: Akram Tabka
-    url: https://talanlabs.com
-    email: akram.tabka@talan
+    url: https://tabka.net
+    email: tabkram@gmail.com
 
 springfox:
   documentation:

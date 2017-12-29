@@ -12,7 +12,7 @@ spring:
     config:
       server:
         git:
-          uri: https://gitlab.talanlabs.com/microservices-seeds/spring-cloud-seed.git
+          uri: https://github.com/tabkram/spring-cloud-seed.git
           username: ${gitlab.username}
           password: ${gitlab.password}
           searchPaths: config

@@ -29,7 +29,7 @@ Example : `curl http://localhost:8888/acme-service/development`
  
 ## Client side
 
-See documentation about how using a git config server from acme-service easily with spring, in the [ACME README file](https://gitlab.talanlabs.com/microservices-seeds/spring-cloud-seed/blob/master/acme-service/README.md)
+See documentation about how using a git config server from acme-service easily with spring, in the [ACME README file](acme-service/README.md)
 
 
 
